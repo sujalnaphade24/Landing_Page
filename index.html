@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        .section {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+            padding: 2rem;
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #e65c50;
+        }
+
+        .section.menu {
+            background-color: #e7a68d;
+        }
+
+        .section.contact {
+            background-color: #e8a2a2;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .menu-item p {
+            margin: 0.5rem 0 0;
+            color: #666;
+        }
+
+        .menu-item .price {
+            font-size: 1.1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Delicious Bites</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="section">
+        <div class="background">
+            <div class="bubble" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="bubble" style="top: 40%; left: 20%; animation-delay: 2s;"></div>
+            <div class="bubble" style="top: 60%; left: 30%; animation-delay: 4s;"></div>
+            <div class="bubble" style="top: 80%; left: 40%; animation-delay: 6s;"></div>
+            <div class="bubble" style="top: 30%; left: 50%; animation-delay: 1s;"></div>
+            <div class="bubble" style="top: 50%; left: 60%; animation-delay: 3s;"></div>
+            <div class="bubble" style="top: 70%; left: 70%; animation-delay: 5s;"></div>
+            <div class="bubble" style="top: 20%; left: 80%; animation-delay: 7s;"></div>
+            <div class="bubble" style="top: 40%; left: 90%; animation-delay: 8s;"></div>
+        </div>
+        <div class="content">
+            <h1 class="title">Welcome to Delicious Bites</h1>
+            <p class="subtitle">Savor the Flavor of Fresh Ingredients</p>
+            <a href="#menu" class="button">Discover Our Menu</a>
+        </div>
+    </div>
+
+    <div id="menu" class="section menu">
+        <div class="content">
+            <h1 class="title">Our Menu</h1>
+            <p class="subtitle">Explore our delicious offerings, made from the freshest ingredients.</p>
+            <div class="menu-item">
+                <h3>Margherita Pizza</h3>
+                <p>Classic pizza with fresh tomatoes, mozzarella cheese, and basil.</p>
+                <p class="price">380 Rs</p>
+            </div>
+            <div class="menu-item">
+                <h3>Red Sauce Pasta</h3>
+                <p>Classic pasta with fresh tomatoes, mozzarella cheese, and capsicum.</p>
+                <p class="price">75 Rs</p>
+            </div>
+            <div class="menu-item">
+                <h3>cold-coffee</h3>
+                <p>dalgona coffee with cream.</p>
+                <p class="price">120 Rs</p>
+            </div>
+            <div class="menu-item">
+                <h3>Garlic Bread</h3>
+                <p>Fresh Bread with Garlic,cheese and corn stuffing.</p>
+                <p class="price">80 Rs</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section contact">
+        <div class="content">
+            <h1 class="title">Contact Us</h1>
+            <p class="subtitle">Have questions? Reach out to us and we'll be happy to help!</p>
+            <p>Email: sujalnaphade99@gmail.com</p>
+            <p>Phone: +91 7**********</p>
+            <p>Address: Pune, Maharashra, India</p>
+        </div>
+    </div>
+</body>
+</html>
